@@ -22,7 +22,7 @@ function varargout = context_pipeline_settings(varargin)
 
 % Edit the above text to modify the response to help context_pipeline_settings
 
-% Last Modified by GUIDE v2.5 16-Mar-2015 17:03:22
+% Last Modified by GUIDE v2.5 20-Mar-2015 13:56:27
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -283,3 +283,66 @@ function pushbutton17_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton17 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in tab_preprocessing.
+function tab_preprocessing_Callback(hObject, eventdata, handles)
+% hObject    handle to tab_preprocessing (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of tab_preprocessing
+
+
+% --- Executes on button press in tab_RSVP.
+function tab_RSVP_Callback(hObject, eventdata, handles)
+% hObject    handle to tab_RSVP (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of tab_RSVP
+
+
+% --- Executes on button press in tab_SSVEP.
+function tab_SSVEP_Callback(hObject, eventdata, handles)
+% hObject    handle to tab_SSVEP (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of tab_SSVEP
+
+
+% --- Executes on button press in tab_ERN.
+function tab_ERN_Callback(hObject, eventdata, handles)
+% hObject    handle to tab_ERN (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of tab_ERN
+
+
+% --- Executes on button press in tab_motor_imagery.
+function tab_motor_imagery_Callback(hObject, eventdata, handles)
+% hObject    handle to tab_motor_imagery (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of tab_motor_imagery
+
+
+% --- Executes on button press in tab_attention.
+function tab_attention_Callback(hObject, eventdata, handles)
+% hObject    handle to tab_attention (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of tab_attention
+
+
+% --- Executes on button press in tab_behavior.
+function tab_behavior_Callback(hObject, eventdata, handles)
+% hObject    handle to tab_behavior (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of tab_behavior

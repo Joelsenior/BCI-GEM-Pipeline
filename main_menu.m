@@ -56,7 +56,7 @@ function main_menu_OpeningFcn(hObject, eventdata, handles, varargin)
 mfilename
 global SCR
 SCR = get(0,'Screensize');  % Get screensize
-addpath('./scripts/');
+addpath(genpath('./scripts/'));
 addpath(genpath('./GUI Figures/'))
 movegui(hObject,[SCR(3)/4-200 ,SCR(4)/4+200]);
 % Choose default command line output for main_menu
@@ -85,6 +85,7 @@ function button_run_pipeline_Callback(hObject, eventdata, handles)
 % hObject    handle to button_run_pipeline (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+run_pipeline
 
 
 
@@ -94,7 +95,7 @@ function button_pipeline_settings_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 global SCR;
-handles.context_rsvp= context_pipeline_settings('position',[SCR(3)/4+400 ,SCR(4)/4-600 800 750]);
+handles.context_rsvp= context_pipeline_settings('position',[SCR(3)/4+400 ,SCR(4)/4-600 910 900]);
 guidata(hObject, handles);
 
 

@@ -90,7 +90,7 @@ if exist('handles.context_rsvp')
     clear handles.context_rsvp
 end
 global SCR;
-handles.context_rsvp= context_rsvp('position',[SCR(3)/4+400 ,SCR(4)/4-600 800 750]);
+handles.context_rsvp= context_rsvp('position',[SCR(3)/4+400 ,SCR(4)/4-600 1000 1000]);
 
 
 % --- Executes on button press in view_ERN_analysis.

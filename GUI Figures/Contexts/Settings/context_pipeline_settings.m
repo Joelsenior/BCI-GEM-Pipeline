@@ -22,7 +22,7 @@ function varargout = context_pipeline_settings(varargin)
 
 % Edit the above text to modify the response to help context_pipeline_settings
 
-% Last Modified by GUIDE v2.5 20-Mar-2015 13:56:27
+% Last Modified by GUIDE v2.5 24-Mar-2015 00:29:04
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -54,7 +54,20 @@ function context_pipeline_settings_OpeningFcn(hObject, eventdata, handles, varar
 
 % Choose default command line output for context_pipeline_settings
 handles.output = hObject;
-
+if ~exist('./params/params_settings.mat')
+    params_settings.enable_preprocessing = 0;
+    params_settings.enable_RSVP = 1;
+    params_settings.enable_SSVEP = 0;
+    params_settings.enable_ERN = 0;
+    params_settings.enable_motor_imagery = 0;
+    params_settings.enable_attention = 0;
+    params_settings.enable_behavior = 0;
+    save('./params/params_settings.mat','params_settings')
+end
+    
+    
+load('./params/params_settings.mat')
+handles.params_settings = params_settings;
 % Update handles structure
 guidata(hObject, handles);
 
@@ -137,6 +150,7 @@ function tab_settings_RSVP_Callback(hObject, eventdata, handles)
 % hObject    handle to tab_settings_RSVP (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
 
 
 
@@ -250,12 +264,12 @@ function tab_across_sessions_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 
-% --- Executes on button press in pushbutton13.
-function pushbutton13_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton13 (see GCBO)
+% --- Executes on button press in button_save.
+function button_save_Callback(hObject, eventdata, handles)
+% hObject    handle to button_save (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+main_menu
 
 % --- Executes on button press in tab_settings_SSVEP.
 function tab_settings_SSVEP_Callback(hObject, eventdata, handles)
@@ -292,6 +306,7 @@ function tab_preprocessing_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of tab_preprocessing
+delete(get(handles.uipanel,'Children'));
 
 
 % --- Executes on button press in tab_RSVP.
@@ -301,6 +316,7 @@ function tab_RSVP_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of tab_RSVP
+delete(get(handles.uipanel,'Children'));
 
 
 % --- Executes on button press in tab_SSVEP.
@@ -310,6 +326,7 @@ function tab_SSVEP_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of tab_SSVEP
+delete(get(handles.uipanel,'Children'));
 
 
 % --- Executes on button press in tab_ERN.
@@ -319,6 +336,7 @@ function tab_ERN_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of tab_ERN
+delete(get(handles.uipanel,'Children'));
 
 
 % --- Executes on button press in tab_motor_imagery.
@@ -328,6 +346,7 @@ function tab_motor_imagery_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of tab_motor_imagery
+delete(get(handles.uipanel,'Children'));
 
 
 % --- Executes on button press in tab_attention.
@@ -337,6 +356,7 @@ function tab_attention_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of tab_attention
+delete(get(handles.uipanel,'Children'));
 
 
 % --- Executes on button press in tab_behavior.
@@ -346,3 +366,50 @@ function tab_behavior_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of tab_behavior
+delete(get(handles.uipanel,'Children'));
+
+
+
+% --- Executes on button press in button_close.
+function button_close_Callback(hObject, eventdata, handles)
+% hObject    handle to button_close (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+%delete(hObject);
+close(handles.figure1)
+
+% --- Executes on button press in tab_general.
+function tab_general_Callback(hObject, eventdata, handles)
+% hObject    handle to tab_general (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of tab_general
+delete(get(handles.uipanel,'Children'));
+handles.text_sub =  uicontrol('Parent', handles.uipanel,'style','text',...
+                    'unit','pix',...
+                    'position',[10 600 100 30],...
+                    'string','Subject',...
+                    'FontSize',18);
+handles.edit_sub =  uicontrol('Parent', handles.uipanel,'style','edit',...
+                    'unit','pix',...
+                    'position',[110 600 100 30],...
+                    'string','1',...
+                    'FontSize',18);
+formatOut = 'mm-dd-yy';
+current_date = datestr(now,formatOut);
+
+handles.text_sub =  uicontrol('Parent', handles.uipanel,'style','text',...
+                    'unit','pix',...
+                    'position',[10 560 100 30],...
+                    'string','Date',...
+                    'FontSize',18);
+handles.edit_sub =  uicontrol('Parent', handles.uipanel,'style','edit',...
+                    'unit','pix',...
+                    'position',[110 560 100 30],...
+                    'string',current_date,...
+                    'FontSize',18);
+                
+guidata(hObject, handles);
+                
+                
